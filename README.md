@@ -13,3 +13,8 @@ npm start
 ```
 npm run deploy
 ```
+
+### Credits
+
+- NCAA tournament results from https://data.world/michaelaroy/ncaa-tournament-results
+  - Modified team names to match those from KenPom
