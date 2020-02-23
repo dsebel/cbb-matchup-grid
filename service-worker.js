@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/cbb-matchup-grid/precache-manifest.3e125680b2da892a537470ea800cf2b7.js"
+  "/cbb-matchup-grid/precache-manifest.de55ed7a92577f73eacdd887dd584263.js"
 );
 
 self.addEventListener('message', (event) => {
