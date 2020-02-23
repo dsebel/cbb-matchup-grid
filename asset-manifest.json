@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/cbb-matchup-grid/static/css/main.d1b05096.chunk.css",
+    "main.js": "/cbb-matchup-grid/static/js/main.2cc1748e.chunk.js",
+    "main.js.map": "/cbb-matchup-grid/static/js/main.2cc1748e.chunk.js.map",
+    "runtime-main.js": "/cbb-matchup-grid/static/js/runtime-main.4438856e.js",
+    "runtime-main.js.map": "/cbb-matchup-grid/static/js/runtime-main.4438856e.js.map",
+    "static/js/2.8a1c8af4.chunk.js": "/cbb-matchup-grid/static/js/2.8a1c8af4.chunk.js",
+    "static/js/2.8a1c8af4.chunk.js.map": "/cbb-matchup-grid/static/js/2.8a1c8af4.chunk.js.map",
+    "index.html": "/cbb-matchup-grid/index.html",
+    "precache-manifest.3e125680b2da892a537470ea800cf2b7.js": "/cbb-matchup-grid/precache-manifest.3e125680b2da892a537470ea800cf2b7.js",
+    "service-worker.js": "/cbb-matchup-grid/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/cbb-matchup-grid/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.8a1c8af4.chunk.js.LICENSE.txt": "/cbb-matchup-grid/static/js/2.8a1c8af4.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/cbb-matchup-grid/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4438856e.js",
+    "static/js/2.8a1c8af4.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.2cc1748e.chunk.js"
+  ]
+}
