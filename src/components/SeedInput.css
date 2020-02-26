@@ -1,3 +1,5 @@
-.seed-dropdown {
-  min-width: 160px;
+.vs-text {
+  /* Center "vs." text horizontally & vertically. */
+  line-height: 38px;
+  text-align: center;
 }

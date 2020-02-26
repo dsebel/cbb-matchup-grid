@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Papa from 'papaparse';
+import { Grid, Header } from 'semantic-ui-react';
 
 import SeedInput from './SeedInput';
 import './App.css';
@@ -51,20 +52,14 @@ class App extends Component {
     });
   }
 
-  handleLeftSeedUpdate(event) {
+  handleLeftSeedUpdate(event, data) {
     event.preventDefault();
-    this.setState(
-      { leftSeed: parseInt(event.target.value, 10) },
-      this.filterGames
-    );
+    this.setState({ leftSeed: data.value }, this.filterGames);
   }
 
-  handleRightSeedUpdate(event) {
+  handleRightSeedUpdate(event, data) {
     event.preventDefault();
-    this.setState(
-      { rightSeed: parseInt(event.target.value, 10) },
-      this.filterGames
-    );
+    this.setState({ rightSeed: data.value }, this.filterGames);
   }
 
   filterGames() {
@@ -81,7 +76,13 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <Grid container>
+        <Grid.Row>
+          <Grid.Column>
+            <Header as="h1">CBB Matchup Grid</Header>
+          </Grid.Column>
+        </Grid.Row>
+
         <SeedInput
           leftSeed={this.state.leftSeed}
           onLeftSeedDropdownChange={this.handleLeftSeedUpdate}
@@ -95,7 +96,7 @@ class App extends Component {
             {fg['Team B']}
           </div>
         ))}
-      </div>
+      </Grid>
     );
   }
 }
