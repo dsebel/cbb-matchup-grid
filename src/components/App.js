@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Papa from 'papaparse';
-import { Grid, Header } from 'semantic-ui-react';
+import { Divider, Grid, Header } from 'semantic-ui-react';
 
 import SeedInput from './SeedInput';
 import './App.css';
@@ -76,10 +76,12 @@ class App extends Component {
 
   render() {
     return (
-      <Grid container>
+      <Grid container style={{ marginTop: '20px' }}>
         <Grid.Row>
           <Grid.Column>
-            <Header as="h1">CBB Matchup Grid</Header>
+            <Header as="h1" dividing>
+              CBB Matchup Grid
+            </Header>
           </Grid.Column>
         </Grid.Row>
 
@@ -90,12 +92,26 @@ class App extends Component {
           onRightSeedDropdownChange={this.handleRightSeedUpdate}
         ></SeedInput>
 
-        {this.state.filteredGames.map(fg => (
-          <div key={`${fg['Year']}-${fg['Team A']}-${fg['Team B']}`}>
-            {fg['Year']}: {fg['Seed A']} {fg['Team A']} vs {fg['Seed B']}{' '}
-            {fg['Team B']}
-          </div>
-        ))}
+        <Divider />
+
+        <Grid.Row style={{ maxHeight: '400px', overflowY: 'scroll' }}>
+          <Grid.Column>
+            <ul style={{ margin: '0' }}>
+              {this.state.filteredGames.length > 0 &&
+                this.state.filteredGames.map(fg => (
+                  <li key={`${fg['Year']}-${fg['Team A']}-${fg['Team B']}`}>
+                    {fg['Year']}: {fg['Seed A']} {fg['Team A']} vs{' '}
+                    {fg['Seed B']} {fg['Team B']}
+                  </li>
+                ))}
+              {this.state.filteredGames.length === 0 && (
+                <li>No matchups with given seeds found.</li>
+              )}
+            </ul>
+          </Grid.Column>
+        </Grid.Row>
+
+        <Divider />
       </Grid>
     );
   }

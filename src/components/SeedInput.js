@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, Dropdown, Grid, Header } from 'semantic-ui-react';
+import { Dropdown, Grid, Header } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 import './SeedInput.css';
@@ -25,11 +25,9 @@ const dropdownOptions = [
 
 function SeedInput(props) {
   return (
-    // <Grid>
     <Grid.Row>
       <Grid.Column>
         <Header as="h3">Seed Select</Header>
-        <Divider />
         <Grid columns={3}>
           <Grid.Column width={7}>
             <Dropdown
