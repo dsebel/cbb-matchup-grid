@@ -1,23 +1,27 @@
 {
   "files": {
-    "main.css": "/cbb-matchup-grid/static/css/main.08163736.chunk.css",
-    "main.js": "/cbb-matchup-grid/static/js/main.98d8da76.chunk.js",
-    "main.js.map": "/cbb-matchup-grid/static/js/main.98d8da76.chunk.js.map",
+    "main.css": "/cbb-matchup-grid/static/css/main.a35fb5cb.chunk.css",
+    "main.js": "/cbb-matchup-grid/static/js/main.85b4f368.chunk.js",
+    "main.js.map": "/cbb-matchup-grid/static/js/main.85b4f368.chunk.js.map",
     "runtime-main.js": "/cbb-matchup-grid/static/js/runtime-main.4438856e.js",
     "runtime-main.js.map": "/cbb-matchup-grid/static/js/runtime-main.4438856e.js.map",
-    "static/js/2.fda96299.chunk.js": "/cbb-matchup-grid/static/js/2.fda96299.chunk.js",
-    "static/js/2.fda96299.chunk.js.map": "/cbb-matchup-grid/static/js/2.fda96299.chunk.js.map",
+    "static/css/2.e0ba9920.chunk.css": "/cbb-matchup-grid/static/css/2.e0ba9920.chunk.css",
+    "static/js/2.93a57061.chunk.js": "/cbb-matchup-grid/static/js/2.93a57061.chunk.js",
+    "static/js/2.93a57061.chunk.js.map": "/cbb-matchup-grid/static/js/2.93a57061.chunk.js.map",
     "index.html": "/cbb-matchup-grid/index.html",
-    "precache-manifest.de55ed7a92577f73eacdd887dd584263.js": "/cbb-matchup-grid/precache-manifest.de55ed7a92577f73eacdd887dd584263.js",
+    "precache-manifest.ec7da27c9fd672f7ae7a01fcf0736c38.js": "/cbb-matchup-grid/precache-manifest.ec7da27c9fd672f7ae7a01fcf0736c38.js",
     "service-worker.js": "/cbb-matchup-grid/service-worker.js",
-    "static/css/main.08163736.chunk.css.map": "/cbb-matchup-grid/static/css/main.08163736.chunk.css.map",
-    "static/js/2.fda96299.chunk.js.LICENSE.txt": "/cbb-matchup-grid/static/js/2.fda96299.chunk.js.LICENSE.txt",
-    "static/media/Big_Dance_CSV.csv": "/cbb-matchup-grid/static/media/Big_Dance_CSV.0b19038c.csv"
+    "static/css/2.e0ba9920.chunk.css.map": "/cbb-matchup-grid/static/css/2.e0ba9920.chunk.css.map",
+    "static/css/main.a35fb5cb.chunk.css.map": "/cbb-matchup-grid/static/css/main.a35fb5cb.chunk.css.map",
+    "static/js/2.93a57061.chunk.js.LICENSE.txt": "/cbb-matchup-grid/static/js/2.93a57061.chunk.js.LICENSE.txt",
+    "static/media/Big_Dance_CSV.csv": "/cbb-matchup-grid/static/media/Big_Dance_CSV.0b19038c.csv",
+    "static/media/semantic.min.css": "/cbb-matchup-grid/static/media/outline-icons.ef60a4f6.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.4438856e.js",
-    "static/js/2.fda96299.chunk.js",
-    "static/css/main.08163736.chunk.css",
-    "static/js/main.98d8da76.chunk.js"
+    "static/css/2.e0ba9920.chunk.css",
+    "static/js/2.93a57061.chunk.js",
+    "static/css/main.a35fb5cb.chunk.css",
+    "static/js/main.85b4f368.chunk.js"
   ]
 }
