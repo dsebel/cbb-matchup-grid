@@ -50,14 +50,8 @@ class MatchupGrid extends React.Component {
     let matchupLines = [];
 
     this.props.filteredGames.forEach(game => {
-      // FIXME: Only years with data at the moment.
-      if (
-        game['Year'] !== 2015 &&
-        game['Year'] !== 2016 &&
-        game['Year'] !== 2017 &&
-        game['Year'] !== 2018 &&
-        game['Year'] !== 2019
-      ) {
+      // FIXME: Only support 2010+ at the moment.
+      if (game['Year'] < 2010) {
         return;
       }
 
