@@ -52,6 +52,7 @@ class MatchupGrid extends React.Component {
     this.props.filteredGames.forEach(game => {
       // FIXME: Only years with data at the moment.
       if (
+        game['Year'] !== 2015 &&
         game['Year'] !== 2016 &&
         game['Year'] !== 2017 &&
         game['Year'] !== 2018 &&
@@ -74,7 +75,7 @@ class MatchupGrid extends React.Component {
         teamAData = this.props.teams[lookupKey];
         teamData.push({
           ...teamAData,
-          ...{ FillColor: teamAColor },
+          ...{ FillColor: teamAColor, Opponent: game['Team B'] },
         });
       } else {
         console.error('MISSING TEAM', lookupKey);
@@ -84,7 +85,7 @@ class MatchupGrid extends React.Component {
         teamBData = this.props.teams[lookupKey];
         teamData.push({
           ...teamBData,
-          ...{ FillColor: teamBColor },
+          ...{ FillColor: teamBColor, Opponent: game['Team A'] },
         });
       } else {
         console.error('MISSING TEAM', lookupKey);
@@ -92,14 +93,9 @@ class MatchupGrid extends React.Component {
 
       // Create matchup line.
       matchupLines.push({
-        teamA: {
-          x: xScale(teamAData['AdjO']),
-          y: yScale(teamAData['AdjD']),
-        },
-        teamB: {
-          x: xScale(teamBData['AdjO']),
-          y: yScale(teamBData['AdjD']),
-        },
+        key: `${teamAData['Team']}-${teamAData['Year']}-${teamBData['Team']}`,
+        pointA: [xScale(teamAData['AdjO']), yScale(teamAData['AdjD'])],
+        pointB: [xScale(teamBData['AdjO']), yScale(teamBData['AdjD'])],
       });
     });
 
@@ -118,19 +114,17 @@ class MatchupGrid extends React.Component {
           <g className="line-container">
             {matchupLines.map(line => (
               <path
+                key={line.key}
                 className="line"
                 strokeDasharray="3, 3"
-                d={lineGenerator([
-                  [line.teamA.x, line.teamA.y],
-                  [line.teamB.x, line.teamB.y],
-                ])}
+                d={lineGenerator([line.pointA, line.pointB])}
               ></path>
             ))}
           </g>
           <g className="point-container">
             {teamData.map(team => (
               <Tippy
-                key={`${team['Year']}-${team['Team']}`}
+                key={`${team['Year']}-${team['Team']}-${team['Opponent']}`}
                 content={`${team['Year']}: (${team['Seed']}) ${team['Team']}`}
               >
                 <circle
