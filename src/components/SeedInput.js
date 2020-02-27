@@ -61,8 +61,8 @@ function SeedInput(props) {
 SeedInput.propTypes = {
   leftSeed: PropTypes.number,
   onLeftSeedDropdownChange: PropTypes.func,
-  rightSeed: PropTypes.number,
   onRightSeedDropdownChange: PropTypes.func,
+  rightSeed: PropTypes.number,
 };
 
 export default SeedInput;

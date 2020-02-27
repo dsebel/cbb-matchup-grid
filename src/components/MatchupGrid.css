@@ -1,0 +1,23 @@
+g.line-container {
+  /* Shows nothing by default, set stroke color. */
+  stroke: black;
+
+  /* Fade lines a bit so they're not so overwhelming. */
+  opacity: 0.5;
+}
+
+.line {
+  /* Fade the lines a little bit to reduce visual clutter. */
+  opacity: 0.5;
+}
+
+.tooltip {
+  /* Necessary to move tooltip wherever we need it. */
+  position: absolute;
+
+  /* Makes hovering MUCH more stable. */
+  pointer-events: none;
+
+  /* Tooltip styling. */
+  font-size: small;
+}

@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import Papa from 'papaparse';
-import { Divider, Grid, Header } from 'semantic-ui-react';
+import { Divider, Grid, Header, Message } from 'semantic-ui-react';
 
 import SeedInput from './SeedInput';
+import MatchupGrid from './MatchupGrid';
+
 import './App.css';
 import gameData from '../data/Big_Dance_CSV.csv';
+import teamData from '../data/KP.csv';
 
 class App extends Component {
   constructor(props) {
@@ -17,9 +20,15 @@ class App extends Component {
       // Filtered games, all games currently selected.
       filteredGames: [],
 
+      // Team lookup - can lookup by team name - year keys.
+      teams: {},
+
       // Selected seeds.
       leftSeed: 1,
       rightSeed: 1,
+
+      // Data status variables. Used to indicate if data is ready or not.
+      dataReady: false,
     };
 
     this.handleLeftSeedUpdate = this.handleLeftSeedUpdate.bind(this);
@@ -47,7 +56,24 @@ class App extends Component {
               : `${row['Seed B']}-${row['Seed A']}`;
           games[seedKey] ? games[seedKey].push(row) : (games[seedKey] = [row]);
         });
-        this.setState({ games }, this.filterGames);
+        this.setState({ games }, this.loadTeams);
+      },
+    });
+  }
+
+  loadTeams() {
+    Papa.parse(teamData, {
+      download: true,
+      header: true,
+      skipEmptyLines: true,
+      dynamicTyping: true,
+      complete: results => {
+        let teams = {};
+        results.data.forEach(row => {
+          const key = `${row['Team']}-${row['Year']}`;
+          teams[key] = row;
+        });
+        this.setState({ teams, dataReady: true }, this.filterGames);
       },
     });
   }
@@ -85,6 +111,14 @@ class App extends Component {
           </Grid.Column>
         </Grid.Row>
 
+        <Grid.Row>
+          <Grid.Column>
+            <Message warning>
+              <b>Note:</b> Currently only includes data from 2017-2019.
+            </Message>
+          </Grid.Column>
+        </Grid.Row>
+
         <SeedInput
           leftSeed={this.state.leftSeed}
           onLeftSeedDropdownChange={this.handleLeftSeedUpdate}
@@ -108,6 +142,19 @@ class App extends Component {
                 <li>No matchups with given seeds found.</li>
               )}
             </ul>
+          </Grid.Column>
+        </Grid.Row>
+
+        <Divider />
+
+        <Grid.Row>
+          <Grid.Column>
+            {this.state.dataReady && (
+              <MatchupGrid
+                filteredGames={this.state.filteredGames}
+                teams={this.state.teams}
+              ></MatchupGrid>
+            )}
           </Grid.Column>
         </Grid.Row>
 
