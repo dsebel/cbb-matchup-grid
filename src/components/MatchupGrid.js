@@ -33,66 +33,20 @@ class MatchupGrid extends React.Component {
     // Create X scale.
     xScale = d3
       .scaleLinear()
-      .domain(d3.extent(allTeams.map(team => team['AdjO'])))
+      .domain(d3.extent(allTeams.map(team => team['adjO'])))
       .range([0, CHART_WIDTH])
       .nice();
 
     // Create Y scale.
     yScale = d3
       .scaleLinear()
-      .domain(d3.extent(allTeams.map(team => team['AdjD'])))
+      .domain(d3.extent(allTeams.map(team => team['adjD'])))
       .range([0, CHART_HEIGHT])
       .nice();
   }
 
   render() {
-    let teamData = [];
-    let matchupLines = [];
-
-    this.props.filteredGames.forEach(game => {
-      // FIXME: Only support 2010+ at the moment.
-      if (game['Year'] < 2010) {
-        return;
-      }
-
-      let teamAColor = 'green';
-      let teamBColor = 'red';
-      if (game['Score A'] < game['Score B']) {
-        teamAColor = 'red';
-        teamBColor = 'green';
-      }
-
-      let teamAData = null;
-      let teamBData = null;
-      let lookupKey = `${game['Team A']}-${game['Year']}`;
-      if (this.props.teams[lookupKey]) {
-        teamAData = this.props.teams[lookupKey];
-        teamData.push({
-          ...teamAData,
-          ...{ FillColor: teamAColor, Opponent: game['Team B'] },
-        });
-      } else {
-        console.error('MISSING TEAM', lookupKey);
-      }
-      lookupKey = `${game['Team B']}-${game['Year']}`;
-      if (this.props.teams[lookupKey]) {
-        teamBData = this.props.teams[lookupKey];
-        teamData.push({
-          ...teamBData,
-          ...{ FillColor: teamBColor, Opponent: game['Team A'] },
-        });
-      } else {
-        console.error('MISSING TEAM', lookupKey);
-      }
-
-      // Create matchup line.
-      matchupLines.push({
-        key: `${teamAData['Team']}-${teamAData['Year']}-${teamBData['Team']}`,
-        pointA: [xScale(teamAData['AdjO']), yScale(teamAData['AdjD'])],
-        pointB: [xScale(teamBData['AdjO']), yScale(teamBData['AdjD'])],
-      });
-    });
-
+    // Create axis ticks.
     let xTicks = xScale.ticks().map(value => ({
       value,
       xOffset: xScale(value),
@@ -102,34 +56,65 @@ class MatchupGrid extends React.Component {
       yOffset: yScale(value),
     }));
 
+    // Create matchup lines.
+    let matchupLines = [];
+    this.props.filteredGames.forEach(game => {
+      matchupLines.push(
+        <path
+          key={game.key}
+          className="line"
+          strokeDasharray="3, 3"
+          d={lineGenerator([
+            [xScale(game.teamA.data.adjO), yScale(game.teamA.data.adjD)],
+            [xScale(game.teamB.data.adjO), yScale(game.teamB.data.adjD)],
+          ])}
+        ></path>
+      );
+    });
+
+    // Create points.
+    let matchupPoints = [];
+    this.props.filteredGames.forEach(game => {
+      [game.teamA, game.teamB].forEach(team => {
+        matchupPoints.push(
+          <Tippy
+            key={team.key}
+            content={`${game.year}: (${team.data.seed}) ${team.data.name}`}
+          >
+            <circle
+              cx={xScale(team.data.adjO)}
+              cy={yScale(team.data.adjD)}
+              r={5}
+              style={{ fill: team.won ? 'green' : 'red' }}
+            ></circle>
+          </Tippy>
+        );
+      });
+    });
+
+    let potentialMatchupPoints = [];
+    this.props.potentialMatchups.forEach(team => {
+      potentialMatchupPoints.push(
+        <Tippy
+          key={team.key}
+          content={`${this.props.currentYear}: (${team.data.seed}) ${team.data.name}`}
+        >
+          <circle
+            cx={xScale(team.data.adjO)}
+            cy={yScale(team.data.adjD)}
+            r={5}
+            style={{ fill: 'purple' }}
+          ></circle>
+        </Tippy>
+      );
+    });
+
     return (
       <svg width={WIDTH} height={HEIGHT}>
         <g transform={`translate(${MARGIN.left}, ${MARGIN.top})`}>
-          <g className="line-container">
-            {matchupLines.map(line => (
-              <path
-                key={line.key}
-                className="line"
-                strokeDasharray="3, 3"
-                d={lineGenerator([line.pointA, line.pointB])}
-              ></path>
-            ))}
-          </g>
-          <g className="point-container">
-            {teamData.map(team => (
-              <Tippy
-                key={`${team['Year']}-${team['Team']}-${team['Opponent']}`}
-                content={`${team['Year']}: (${team['Seed']}) ${team['Team']}`}
-              >
-                <circle
-                  cx={xScale(team['AdjO'])}
-                  cy={yScale(team['AdjD'])}
-                  r={5}
-                  style={{ fill: team['FillColor'] }}
-                ></circle>
-              </Tippy>
-            ))}
-          </g>
+          <g className="line-container">{matchupLines}</g>
+          <g className="point-container">{matchupPoints}</g>
+          <g className="point-container">{potentialMatchupPoints}</g>
         </g>
 
         <g
@@ -196,8 +181,12 @@ class MatchupGrid extends React.Component {
 }
 
 MatchupGrid.propTypes = {
-  filteredGames: PropTypes.array,
   teams: PropTypes.object,
+  filteredGames: PropTypes.array,
+  currentYear: PropTypes.number,
+
+  showPotentialMatchups: PropTypes.bool,
+  potentialMatchups: PropTypes.array,
 };
 
 export default MatchupGrid;

@@ -4,10 +4,11 @@ import { Divider, Grid, Header, Message } from 'semantic-ui-react';
 
 import SeedInput from './SeedInput';
 import MatchupGrid from './MatchupGrid';
+import FilterInput from './FilterInput';
 
 import './App.css';
-import gameData from '../data/Big_Dance_CSV.csv';
-import teamData from '../data/KP.csv';
+import gameCSV from '../data/Big_Dance_CSV.csv';
+import teamCSV from '../data/KP.csv';
 
 class App extends Component {
   constructor(props) {
@@ -15,17 +16,29 @@ class App extends Component {
 
     this.state = {
       // All games, grouped by sorted seed matchups.
-      games: {},
+      games: [],
 
       // Filtered games, all games currently selected.
       filteredGames: [],
 
+      // Potential games, used for just the seeds (not matchups).
+      potentialMatchups: [],
+
       // Team lookup - can lookup by team name - year keys.
       teams: {},
+
+      // The current season based on tourney year (e.g. 2019-2020 season is
+      // 2020).
+      currentYear: 2019, // pretend that 2019 is the current year
 
       // Selected seeds.
       leftSeed: 1,
       rightSeed: 1,
+
+      // Chart filter options.
+      startingYear: 2010,
+      endingYear: 2019,
+      showPotentialMatchups: false,
 
       // Data status variables. Used to indicate if data is ready or not.
       dataReady: false,
@@ -33,47 +46,69 @@ class App extends Component {
 
     this.handleLeftSeedUpdate = this.handleLeftSeedUpdate.bind(this);
     this.handleRightSeedUpdate = this.handleRightSeedUpdate.bind(this);
+    this.handlePotentialMatchupsUpdate = this.handlePotentialMatchupsUpdate.bind(
+      this
+    );
   }
 
   componentDidMount() {
-    this.loadGames();
+    this.loadData();
   }
 
-  loadGames() {
-    Papa.parse(gameData, {
+  loadData() {
+    Papa.parse(teamCSV, {
       download: true,
       header: true,
       skipEmptyLines: true,
       dynamicTyping: true,
-      complete: result => {
-        // Load games into a JS object, using the sorted seed values as keys
-        // for easier lookup.
-        let games = {};
-        result.data.forEach(row => {
-          const seedKey =
-            row['Seed A'] <= row['Seed B']
-              ? `${row['Seed A']}-${row['Seed B']}`
-              : `${row['Seed B']}-${row['Seed A']}`;
-          games[seedKey] ? games[seedKey].push(row) : (games[seedKey] = [row]);
-        });
-        this.setState({ games }, this.loadTeams);
-      },
-    });
-  }
-
-  loadTeams() {
-    Papa.parse(teamData, {
-      download: true,
-      header: true,
-      skipEmptyLines: true,
-      dynamicTyping: true,
-      complete: results => {
+      complete: teamData => {
+        // Get the team data.
         let teams = {};
-        results.data.forEach(row => {
-          const key = `${row['Team']}-${row['Year']}`;
-          teams[key] = row;
+        teamData.data.forEach(teamRow => {
+          const key = `${teamRow['Team']}-${teamRow['Year']}`;
+          teams[key] = {
+            year: teamRow['Year'],
+            seed: teamRow['Seed'],
+            name: teamRow['Team'],
+            adjO: teamRow['AdjO'],
+            adjD: teamRow['AdjD'],
+          };
         });
-        this.setState({ teams, dataReady: true }, this.filterGames);
+
+        // Now load matches and embed team data into matches.
+        Papa.parse(gameCSV, {
+          download: true,
+          header: true,
+          skipEmptyLines: true,
+          dynamicTyping: true,
+          complete: gameData => {
+            let games = [];
+            gameData.data.forEach(gameRow => {
+              // Filter out years we don't support.
+              if (gameRow['Year'] < 2010) {
+                return;
+              }
+
+              // Only extract the data we plan on using.
+              games.push({
+                key: `${gameRow['Year']}-${gameRow['Team A']}-${gameRow['Team B']}`,
+                year: gameRow['Year'],
+                seedMatchup: [gameRow['Seed A'], gameRow['Seed B']].sort(),
+                teamA: {
+                  data: teams[`${gameRow['Team A']}-${gameRow['Year']}`],
+                  won: gameRow['Score A'] > gameRow['Score B'],
+                  key: `${gameRow['Year']}-${gameRow['Team A']}-${gameRow['Team B']}`,
+                },
+                teamB: {
+                  data: teams[`${gameRow['Team B']}-${gameRow['Year']}`],
+                  won: gameRow['Score B'] > gameRow['Score A'],
+                  key: `${gameRow['Year']}-${gameRow['Team B']}-${gameRow['Team A']}`,
+                },
+              });
+            });
+            this.setState({ teams, games, dataReady: true }, this.filterGames);
+          },
+        });
       },
     });
   }
@@ -88,16 +123,41 @@ class App extends Component {
     this.setState({ rightSeed: data.value }, this.filterGames);
   }
 
+  handlePotentialMatchupsUpdate(event, data) {
+    event.preventDefault();
+    this.setState(
+      { showPotentialMatchups: data.checked },
+      this.filterPotentialGames
+    );
+  }
+
   filterGames() {
-    const seedKey =
-      this.state.leftSeed <= this.state.rightSeed
-        ? `${this.state.leftSeed}-${this.state.rightSeed}`
-        : `${this.state.rightSeed}-${this.state.leftSeed}`;
-    let filteredGames = [];
-    if (this.state.games[seedKey]) {
-      filteredGames = this.state.games[seedKey];
-    }
+    const stateSeeds = [this.state.leftSeed, this.state.rightSeed].sort();
+    const filteredGames = this.state.games.filter(game => {
+      return (
+        game.seedMatchup[0] === stateSeeds[0] &&
+        game.seedMatchup[1] === stateSeeds[1]
+      );
+    });
     this.setState({ filteredGames });
+  }
+
+  filterPotentialGames() {
+    let potentialMatchups = [];
+    if (this.state.showPotentialMatchups) {
+      const stateSeeds = [this.state.leftSeed, this.state.rightSeed].sort();
+      this.state.games.forEach(game => {
+        if (game.year === this.state.currentYear) {
+          if (stateSeeds.includes(game.teamA.data.seed)) {
+            potentialMatchups.push(game.teamA);
+          }
+          if (stateSeeds.includes(game.teamB.data.seed)) {
+            potentialMatchups.push(game.teamB);
+          }
+        }
+      });
+    }
+    this.setState({ potentialMatchups });
   }
 
   render() {
@@ -114,7 +174,7 @@ class App extends Component {
         <Grid.Row>
           <Grid.Column>
             <Message warning>
-              <b>Note:</b> Currently only includes data from 2017-2019.
+              <b>Note:</b> Currently only includes data from 2010-2019.
             </Message>
           </Grid.Column>
         </Grid.Row>
@@ -133,9 +193,9 @@ class App extends Component {
             <ul style={{ margin: '0' }}>
               {this.state.filteredGames.length > 0 &&
                 this.state.filteredGames.map(fg => (
-                  <li key={`${fg['Year']}-${fg['Team A']}-${fg['Team B']}`}>
-                    {fg['Year']}: {fg['Seed A']} {fg['Team A']} vs{' '}
-                    {fg['Seed B']} {fg['Team B']}
+                  <li key={fg.key}>
+                    {fg.year}: {fg.teamA.data.seed} {fg.teamA.data.name} vs{' '}
+                    {fg.teamB.data.seed} {fg.teamB.data.name}
                   </li>
                 ))}
               {this.state.filteredGames.length === 0 && (
@@ -147,12 +207,22 @@ class App extends Component {
 
         <Divider />
 
+        <FilterInput
+          startingYear={this.state.startingYear}
+          endingYear={this.state.endingYear}
+          showPotentialMatchups={this.state.showPotentialMatchups}
+          onPotentialMatchupsCheckboxChange={this.handlePotentialMatchupsUpdate}
+        ></FilterInput>
+
         <Grid.Row>
           <Grid.Column>
             {this.state.dataReady && (
               <MatchupGrid
-                filteredGames={this.state.filteredGames}
                 teams={this.state.teams}
+                filteredGames={this.state.filteredGames}
+                currentYear={this.state.currentYear}
+                showPotentialMatchups={this.state.showPotentialMatchups}
+                potentialMatchups={this.state.potentialMatchups}
               ></MatchupGrid>
             )}
           </Grid.Column>
