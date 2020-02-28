@@ -5,6 +5,7 @@ import { Divider, Grid, Header, Message } from 'semantic-ui-react';
 import SeedInput from './SeedInput';
 import MatchupGrid from './MatchupGrid';
 import FilterInput from './FilterInput';
+import MatchupList from './MatchupList';
 
 import './App.css';
 import gameCSV from '../data/Big_Dance_CSV.csv';
@@ -188,23 +189,6 @@ class App extends Component {
 
         <Divider />
 
-        <Grid.Row style={{ maxHeight: '400px', overflowY: 'scroll' }}>
-          <Grid.Column>
-            <ul style={{ margin: '0' }}>
-              {this.state.filteredGames.length > 0 &&
-                this.state.filteredGames.map(fg => (
-                  <li key={fg.key}>
-                    {fg.year}: {fg.teamA.data.seed} {fg.teamA.data.name} vs{' '}
-                    {fg.teamB.data.seed} {fg.teamB.data.name}
-                  </li>
-                ))}
-              {this.state.filteredGames.length === 0 && (
-                <li>No matchups with given seeds found.</li>
-              )}
-            </ul>
-          </Grid.Column>
-        </Grid.Row>
-
         <Divider />
 
         <FilterInput
@@ -227,6 +211,10 @@ class App extends Component {
             )}
           </Grid.Column>
         </Grid.Row>
+
+        <Divider />
+
+        <MatchupList filteredGames={this.state.filteredGames}></MatchupList>
 
         <Divider />
       </Grid>
