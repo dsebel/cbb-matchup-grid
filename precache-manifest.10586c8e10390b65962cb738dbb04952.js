@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0ba5a7a6ba61d744d21213c6b964e57d",
+    "revision": "4ff167c7f2251d63ac5618276cb0f354",
     "url": "/cbb-matchup-grid/index.html"
   },
   {
-    "revision": "cde5a0b0e45512496d1e",
+    "revision": "849c685be92ba703c105",
     "url": "/cbb-matchup-grid/static/css/2.44a662ca.chunk.css"
   },
   {
-    "revision": "f23df0f7dab5d1e68713",
+    "revision": "b55ad36d6c49f5e69ca4",
     "url": "/cbb-matchup-grid/static/css/main.1d203044.chunk.css"
   },
   {
-    "revision": "cde5a0b0e45512496d1e",
-    "url": "/cbb-matchup-grid/static/js/2.27a9f735.chunk.js"
+    "revision": "849c685be92ba703c105",
+    "url": "/cbb-matchup-grid/static/js/2.40663175.chunk.js"
   },
   {
     "revision": "21b27ce63718cefcd3db89d9a49b7314",
-    "url": "/cbb-matchup-grid/static/js/2.27a9f735.chunk.js.LICENSE.txt"
+    "url": "/cbb-matchup-grid/static/js/2.40663175.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f23df0f7dab5d1e68713",
-    "url": "/cbb-matchup-grid/static/js/main.6e9c1e5d.chunk.js"
+    "revision": "b55ad36d6c49f5e69ca4",
+    "url": "/cbb-matchup-grid/static/js/main.2d02f2c5.chunk.js"
   },
   {
     "revision": "f1878ed90266669416bd",
