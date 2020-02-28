@@ -9,7 +9,7 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2002,1,1,South,8,82,Notre Dame,Charlotte,63,9
 2002,1,2,West,1,90,Cincinnati,Boston University,52,16
 2002,1,2,West,2,71,Oklahoma,Illinois Chicago,63,15
-2002,1,2,West,3,86,Arizona,Santa Barbara,81,14
+2002,1,2,West,3,86,Arizona,UC Santa Barbara,81,14
 2002,1,2,West,4,69,Ohio St.,Davidson,64,13
 2002,1,2,West,5,80,Miami FL,Missouri,93,12
 2002,1,2,West,6,66,Gonzaga,Wyoming,73,11
@@ -22,7 +22,7 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2002,1,3,East,5,69,Marquette,Tulsa,71,12
 2002,1,3,East,6,68,Texas Tech,Southern Illinois,76,11
 2002,1,3,East,7,69,North Carolina St.,Michigan St.,58,10
-2002,1,3,East,8,80,Wisconsin,St. Johns,70,9
+2002,1,3,East,8,80,Wisconsin,St. John's,70,9
 2002,1,4,Midwest,1,70,Kansas,Holy Cross,59,16
 2002,1,4,Midwest,2,81,Oregon,Montana,62,15
 2002,1,4,Midwest,3,70,Mississippi St.,McNeese St.,58,14
@@ -74,7 +74,7 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2003,1,2,West,2,64,Kansas,Utah St.,61,15
 2003,1,2,West,3,67,Duke,Colorado St.,57,14
 2003,1,2,West,4,65,Illinois,Western Kentucky,60,13
-2003,1,2,West,5,70,Notre Dame,Wisconsin Milwaukee,69,12
+2003,1,2,West,5,70,Notre Dame,Milwaukee,69,12
 2003,1,2,West,6,73,Creighton,Central Michigan,79,11
 2003,1,2,West,7,71,Memphis,Arizona St.,84,10
 2003,1,2,West,8,69,Cincinnati,Gonzaga,74,9
@@ -92,7 +92,7 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2003,1,4,East,4,86,Louisville,Austin Peay,64,13
 2003,1,4,East,5,46,Mississippi St.,Butler,47,12
 2003,1,4,East,6,77,Oklahoma St.,Penn,63,11
-2003,1,4,East,7,63,St. Josephs,Auburn,65,10
+2003,1,4,East,7,63,Saint Joseph's,Auburn,65,10
 2003,1,4,East,8,76,California,North Carolina St.,74,9
 2003,2,1,Midwest,1,74,Kentucky,Utah,54,9
 2003,2,1,Midwest,2,74,Pittsburgh,Indiana,52,7
@@ -133,7 +133,7 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2004,1,1,Midwest,6,58,Boston College,Utah,51,11
 2004,1,1,Midwest,7,66,Michigan St.,Nevada,72,10
 2004,1,1,Midwest,8,100,Washington,UAB,102,9
-2004,1,2,East,1,82,St. Josephs,Liberty,63,16
+2004,1,2,East,1,82,Saint Joseph's,Liberty,63,16
 2004,1,2,East,2,75,Oklahoma St.,Eastern Washington,56,15
 2004,1,2,East,3,53,Pittsburgh,UCF,44,14
 2004,1,2,East,4,79,Wake Forest,VCU,78,13
@@ -149,7 +149,7 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2004,1,3,South,6,63,North Carolina,Air Force,52,11
 2004,1,3,South,7,80,Xavier,Louisville,70,10
 2004,1,3,South,8,80,Seton Hall,Arizona,76,9
-2004,1,4,West,1,71,Stanford,Texas San Antonio,45,16
+2004,1,4,West,1,71,Stanford,UTSA,45,16
 2004,1,4,West,2,70,Connecticut,Vermont,53,15
 2004,1,4,West,3,61,North Carolina St.,Louisiana Lafayette,52,14
 2004,1,4,West,4,86,Maryland,UTEP,83,13
@@ -161,7 +161,7 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2004,2,1,Midwest,2,72,Gonzaga,Nevada,91,10
 2004,2,1,Midwest,3,57,Georgia Tech,Boston College,54,6
 2004,2,1,Midwest,4,78,Kansas,Pacific,63,12
-2004,2,2,East,1,70,St. Josephs,Texas Tech,65,8
+2004,2,2,East,1,70,Saint Joseph's,Texas Tech,65,8
 2004,2,2,East,2,70,Oklahoma St.,Memphis,53,7
 2004,2,2,East,3,59,Pittsburgh,Wisconsin,55,6
 2004,2,2,East,4,84,Wake Forest,Manhattan,80,12
@@ -175,14 +175,14 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2004,2,4,West,4,70,Maryland,Syracuse,72,5
 2004,3,1,Midwest,9,74,UAB,Kansas,100,4
 2004,3,1,Midwest,10,67,Nevada,Georgia Tech,72,3
-2004,3,2,East,1,84,St. Josephs,Wake Forest,80,4
+2004,3,2,East,1,84,Saint Joseph's,Wake Forest,80,4
 2004,3,2,East,2,63,Oklahoma St.,Pittsburgh,51,3
 2004,3,3,South,1,72,Duke,Illinois,62,5
 2004,3,3,South,7,79,Xavier,Texas,71,3
 2004,3,4,West,8,80,Alabama,Syracuse,71,5
 2004,3,4,West,2,73,Connecticut,Vanderbilt,53,6
 2004,4,1,Midwest,4,71,Kansas,Georgia Tech,79,3
-2004,4,2,East,1,62,St. Josephs,Oklahoma St.,64,2
+2004,4,2,East,1,62,Saint Joseph's,Oklahoma St.,64,2
 2004,4,3,South,1,66,Duke,Xavier,63,7
 2004,4,4,West,8,71,Alabama,Connecticut,87,2
 2004,5,1,Final Four,3,67,Georgia Tech,Oklahoma St.,65,2
@@ -192,7 +192,7 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2005,1,1,Midwest,2,63,Oklahoma St.,Southeastern Louisiana,50,15
 2005,1,1,Midwest,3,66,Arizona,Utah St.,53,14
 2005,1,1,Midwest,4,85,Boston College,Penn,65,13
-2005,1,1,Midwest,5,73,Alabama,Wisconsin Milwaukee,83,12
+2005,1,1,Midwest,5,73,Alabama,Milwaukee,83,12
 2005,1,1,Midwest,6,68,LSU,UAB,82,11
 2005,1,1,Midwest,7,65,Southern Illinois,Saint Mary's,56,10
 2005,1,1,Midwest,8,57,Texas,Nevada,61,9
@@ -223,7 +223,7 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2005,2,1,Midwest,1,71,Illinois,Nevada,59,9
 2005,2,1,Midwest,2,85,Oklahoma St.,Southern Illinois,77,7
 2005,2,1,Midwest,3,85,Arizona,UAB,63,11
-2005,2,1,Midwest,4,75,Boston College,Wisconsin Milwaukee,83,12
+2005,2,1,Midwest,4,75,Boston College,Milwaukee,83,12
 2005,2,2,West,1,97,Washington,Pacific,79,8
 2005,2,2,West,2,105,Wake Forest,West Virginia,111,7
 2005,2,2,West,3,69,Gonzaga,Texas Tech,71,6
@@ -236,7 +236,7 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2005,2,4,South,2,69,Kentucky,Cincinnati,60,7
 2005,2,4,South,3,58,Oklahoma,Utah,67,6
 2005,2,4,South,13,61,Vermont,Michigan St.,72,5
-2005,3,1,Midwest,1,77,Illinois,Wisconsin Milwaukee,63,12
+2005,3,1,Midwest,1,77,Illinois,Milwaukee,63,12
 2005,3,1,Midwest,2,78,Oklahoma St.,Arizona,79,3
 2005,3,2,West,1,79,Washington,Louisville,93,4
 2005,3,2,West,7,65,West Virginia,Texas Tech,60,6
@@ -280,7 +280,7 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2006,1,4,Midwest,3,76,Florida,South Alabama,50,14
 2006,1,4,Midwest,4,88,Boston College,Pacific,76,13
 2006,1,4,Midwest,5,79,Nevada,Montana,87,12
-2006,1,4,Midwest,6,74,Oklahoma,Wisconsin Milwaukee,82,11
+2006,1,4,Midwest,6,74,Oklahoma,Milwaukee,82,11
 2006,1,4,Midwest,7,54,Georgetown,Northern Iowa,49,10
 2006,1,4,Midwest,8,94,Arizona,Wisconsin,75,9
 2006,2,1,South,1,74,Duke,George Washington,61,8
@@ -297,7 +297,7 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2006,2,3,East,4,64,Illinois,Washington,67,5
 2006,2,4,Midwest,1,82,Villanova,Arizona,78,8
 2006,2,4,Midwest,2,52,Ohio St.,Georgetown,70,7
-2006,2,4,Midwest,3,82,Florida,Wisconsin Milwaukee,60,11
+2006,2,4,Midwest,3,82,Florida,Milwaukee,60,11
 2006,2,4,Midwest,4,69,Boston College,Montana,56,12
 2006,3,1,South,1,54,Duke,LSU,62,4
 2006,3,1,South,2,74,Texas,West Virginia,71,6
@@ -382,7 +382,7 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2008,1,1,East,3,79,Louisville,Boise St.,61,14
 2008,1,1,East,4,71,Washington St.,Winthrop,40,13
 2008,1,1,East,5,68,Notre Dame,George Mason,50,12
-2008,1,1,East,6,72,Oklahoma,St. Josephs,64,11
+2008,1,1,East,6,72,Oklahoma,Saint Joseph's,64,11
 2008,1,1,East,7,81,Butler,South Alabama,61,10
 2008,1,1,East,8,72,Indiana,Arkansas,86,9
 2008,1,2,Midwest,1,85,Kansas,Portland St.,61,16
@@ -504,7 +504,7 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2009,5,2,Final Four,3,69,Villanova,North Carolina,83,1
 2009,6,1,Championship,2,72,Michigan St.,North Carolina,89,1
 2010,1,1,Midwest,1,90,Kansas,Lehigh,74,16
-2010,1,1,Midwest,2,68,Ohio St.,Santa Barbara,51,15
+2010,1,1,Midwest,2,68,Ohio St.,UC Santa Barbara,51,15
 2010,1,1,Midwest,3,83,Georgetown,Ohio,97,14
 2010,1,1,Midwest,4,89,Maryland,Houston,77,13
 2010,1,1,Midwest,5,70,Michigan St.,New Mexico St.,67,12
@@ -566,8 +566,8 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2010,5,1,Final Four,5,50,Michigan St.,Butler,52,5
 2010,5,2,Final Four,2,57,West Virginia,Duke,78,1
 2010,6,1,Championship,5,59,Butler,Duke,61,1
-2011,1,1,East,1,75,Ohio St.,Texas San Antonio,46,16
-2011,1,1,East,2,102,North Carolina,Long Island Brooklyn,87,15
+2011,1,1,East,1,75,Ohio St.,UTSA,46,16
+2011,1,1,East,2,102,North Carolina,LIU Brooklyn,87,15
 2011,1,1,East,3,77,Syracuse,Indiana St.,60,14
 2011,1,1,East,4,59,Kentucky,Princeton,57,13
 2011,1,1,East,5,84,West Virginia,Clemson,78,12
@@ -584,18 +584,18 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2011,1,2,West,8,75,Michigan,Tennessee,45,9
 2011,1,3,Southwest,1,72,Kansas,Boston University,53,16
 2011,1,3,Southwest,2,69,Notre Dame,Akron,56,15
-2011,1,3,Southwest,3,65,Purdue,St. Peters,43,14
+2011,1,3,Southwest,3,65,Purdue,Saint Peter's,43,14
 2011,1,3,Southwest,4,61,Louisville,Morehead St.,62,13
 2011,1,3,Southwest,5,66,Vanderbilt,Richmond,69,12
 2011,1,3,Southwest,6,56,Georgetown,VCU,74,11
 2011,1,3,Southwest,7,50,Texas A&M,Florida St.,57,10
 2011,1,3,Southwest,8,62,UNLV,Illinois,73,9
 2011,1,4,Southeast,1,74,Pittsburgh,UNC Asheville,51,16
-2011,1,4,Southeast,2,79,Florida,Santa Barbara,51,15
+2011,1,4,Southeast,2,79,Florida,UC Santa Barbara,51,15
 2011,1,4,Southeast,3,74,BYU,Wofford,66,14
 2011,1,4,Southeast,4,72,Wisconsin,Belmont,58,13
 2011,1,4,Southeast,5,73,Kansas St.,Utah St.,68,12
-2011,1,4,Southeast,6,71,St. Johns,Gonzaga,86,11
+2011,1,4,Southeast,6,71,St. John's,Gonzaga,86,11
 2011,1,4,Southeast,7,78,UCLA,Michigan St.,76,10
 2011,1,4,Southeast,8,60,Butler,Old Dominion,58,9
 2011,2,1,East,1,98,Ohio St.,George Mason,66,8
@@ -637,7 +637,7 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2012,1,1,South,6,64,UNLV,Colorado,68,11
 2012,1,1,South,7,63,Notre Dame,Xavier,67,10
 2012,1,1,South,8,77,Iowa St.,Connecticut,64,9
-2012,1,2,West,1,89,Michigan St.,Long Island Brooklyn,67,16
+2012,1,2,West,1,89,Michigan St.,LIU Brooklyn,67,16
 2012,1,2,West,2,84,Missouri,Norfolk St.,86,15
 2012,1,2,West,3,88,Marquette,BYU,68,14
 2012,1,2,West,4,69,Louisville,Davidson,62,13
@@ -646,13 +646,13 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2012,1,2,West,7,71,Florida,Virginia,45,10
 2012,1,2,West,8,54,Memphis,Saint Louis,61,9
 2012,1,3,East,1,72,Syracuse,UNC Asheville,65,16
-2012,1,3,East,2,78,Ohio St.,Loyola Maryland,59,15
+2012,1,3,East,2,78,Ohio St.,Loyola MD,59,15
 2012,1,3,East,3,86,Florida St.,St. Bonaventure,63,14
 2012,1,3,East,4,73,Wisconsin,Montana,49,13
 2012,1,3,East,5,79,Vanderbilt,Harvard,70,12
 2012,1,3,East,6,65,Cincinnati,Texas,59,11
 2012,1,3,East,7,77,Gonzaga,West Virginia,54,10
-2012,1,3,East,8,70,Kansas St.,Southern Mississippi,64,9
+2012,1,3,East,8,70,Kansas St.,Southern Miss,64,9
 2012,1,4,Midwest,1,77,North Carolina,Vermont,58,16
 2012,1,4,Midwest,2,65,Kansas,Detroit,50,15
 2012,1,4,Midwest,3,74,Georgetown,Belmont,59,14
@@ -764,12 +764,12 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2014,1,1,South,7,53,New Mexico,Stanford,58,10
 2014,1,1,South,8,48,Colorado,Pittsburgh,77,9
 2014,1,2,East,1,70,Virginia,Coastal Carolina,59,16
-2014,1,2,East,2,73,Villanova,Wisconsin Milwaukee,53,15
+2014,1,2,East,2,73,Villanova,Milwaukee,53,15
 2014,1,2,East,3,93,Iowa St.,North Carolina Central,75,14
 2014,1,2,East,4,93,Michigan St.,Delaware,78,13
 2014,1,2,East,5,57,Cincinnati,Harvard,61,12
 2014,1,2,East,6,79,North Carolina,Providence,77,11
-2014,1,2,East,7,89,Connecticut,St. Josephs,81,10
+2014,1,2,East,7,89,Connecticut,Saint Joseph's,81,10
 2014,1,2,East,8,71,Memphis,George Washington,66,9
 2014,1,3,West,1,88,Arizona,Weber St.,59,16
 2014,1,3,West,2,75,Wisconsin,American,35,15
@@ -837,7 +837,7 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2015,1,3,East,1,93,Villanova,Lafayette,52,16
 2015,1,3,East,2,79,Virginia,Belmont,67,15
 2015,1,3,East,3,69,Oklahoma,Albany,60,14
-2015,1,3,East,4,57,Louisville,Cal Irvine,55,13
+2015,1,3,East,4,57,Louisville,UC Irvine,55,13
 2015,1,3,East,5,71,Northern Iowa,Wyoming,54,12
 2015,1,3,East,6,53,Providence,Dayton,66,11
 2015,1,3,East,7,70,Michigan St.,Georgia,63,10
@@ -849,7 +849,7 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2015,1,4,South,5,57,Utah,Stephen F. Austin,50,12
 2015,1,4,South,6,59,SMU,UCLA,60,11
 2015,1,4,South,7,83,Iowa,Davidson,52,10
-2015,1,4,South,8,76,San Diego St.,St. Johns,64,9
+2015,1,4,South,8,76,San Diego St.,St. John's,64,9
 2015,2,1,Midwest,1,64,Kentucky,Cincinnati,51,8
 2015,2,1,Midwest,2,65,Kansas,Wichita St.,78,7
 2015,2,1,Midwest,3,67,Notre Dame,Butler,64,6
@@ -891,12 +891,12 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2016,1,1,South,8,67,Colorado,Connecticut,74,9
 2016,1,2,West,1,91,Oregon,Holy Cross,52,16
 2016,1,2,West,2,82,Oklahoma,Cal St. Bakersfield,68,15
-2016,1,2,West,3,92,Texas A&M,Wisconsin Green Bay,65,14
+2016,1,2,West,3,92,Texas A&M,Green Bay,65,14
 2016,1,2,West,4,93,Duke,UNC Wilmington,85,13
 2016,1,2,West,5,75,Baylor,Yale,79,12
 2016,1,2,West,6,72,Texas,Northern Iowa,75,11
 2016,1,2,West,7,67,Oregon St.,VCU,75,10
-2016,1,2,West,8,78,St. Josephs,Cincinnati,76,9
+2016,1,2,West,8,78,Saint Joseph's,Cincinnati,76,9
 2016,1,3,East,1,83,North Carolina,Florida Gulf Coast,67,16
 2016,1,3,East,2,71,Xavier,Weber St.,53,15
 2016,1,3,East,3,56,West Virginia,Stephen F. Austin,70,14
@@ -917,7 +917,7 @@ Year,Round,Region Number,Region Name,Seed A,Score A,Team A,Team B,Score B,Seed B
 2016,2,1,South,2,87,Villanova,Iowa,68,7
 2016,2,1,South,3,65,Miami FL,Wichita St.,57,11
 2016,2,1,South,13,60,Hawaii,Maryland,73,5
-2016,2,2,West,1,69,Oregon,St. Josephs,64,8
+2016,2,2,West,1,69,Oregon,Saint Joseph's,64,8
 2016,2,2,West,2,85,Oklahoma,VCU,81,10
 2016,2,2,West,3,92,Texas A&M,Northern Iowa,88,11
 2016,2,2,West,4,71,Duke,Yale,64,12
