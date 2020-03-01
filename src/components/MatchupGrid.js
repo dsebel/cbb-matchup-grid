@@ -96,12 +96,12 @@ class MatchupGrid extends React.Component {
     this.props.potentialMatchups.forEach(team => {
       potentialMatchupPoints.push(
         <Tippy
-          key={team.key}
-          content={`${this.props.currentYear}: (${team.data.seed}) ${team.data.name}`}
+          key={`${team.name}-${team.year}`}
+          content={`${this.props.currentYear}: (${team.seed}) ${team.name}`}
         >
           <circle
-            cx={xScale(team.data.adjO)}
-            cy={yScale(team.data.adjD)}
+            cx={xScale(team.adjO)}
+            cy={yScale(team.adjD)}
             r={5}
             style={{ fill: 'purple' }}
           ></circle>

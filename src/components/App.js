@@ -30,7 +30,7 @@ class App extends Component {
 
       // The current season based on tourney year (e.g. 2019-2020 season is
       // 2020).
-      currentYear: 2019, // pretend that 2019 is the current year
+      currentYear: 2020,
 
       // Selected seeds.
       leftSeed: 1,
@@ -66,6 +66,11 @@ class App extends Component {
         // Get the team data.
         let teams = {};
         teamData.data.forEach(teamRow => {
+          // Ignore any teams without a seed. This can be blank or -1.
+          if (!teamRow['Seed'] || teamRow['Seed'] === -1) {
+            return;
+          }
+
           const key = `${teamRow['Team']}-${teamRow['Year']}`;
           teams[key] = {
             year: teamRow['Year'],
@@ -146,14 +151,11 @@ class App extends Component {
   filterPotentialGames() {
     let potentialMatchups = [];
     if (this.state.showPotentialMatchups) {
-      const stateSeeds = [this.state.leftSeed, this.state.rightSeed].sort();
-      this.state.games.forEach(game => {
-        if (game.year === this.state.currentYear) {
-          if (stateSeeds.includes(game.teamA.data.seed)) {
-            potentialMatchups.push(game.teamA);
-          }
-          if (stateSeeds.includes(game.teamB.data.seed)) {
-            potentialMatchups.push(game.teamB);
+      const stateSeeds = [this.state.leftSeed, this.state.rightSeed];
+      Object.keys(this.state.teams).forEach(key => {
+        if (key.endsWith(this.state.currentYear.toString())) {
+          if (stateSeeds.includes(this.state.teams[key].seed)) {
+            potentialMatchups.push(this.state.teams[key]);
           }
         }
       });
@@ -175,7 +177,10 @@ class App extends Component {
         <Grid.Row>
           <Grid.Column>
             <Message warning>
-              <b>Note:</b> Currently only includes data from 2010-2019.
+              <b>Note:</b> Currently only includes matchup data from 2010-2019.
+            </Message>
+            <Message warning>
+              <b>Note:</b> Uses incomplete and mocked data for 2020.
             </Message>
           </Grid.Column>
         </Grid.Row>
