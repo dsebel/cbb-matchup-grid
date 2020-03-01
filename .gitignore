@@ -6,6 +6,9 @@
 # python
 venv/
 
+# custom tmp dirs
+tmp-*/
+
 # dependencies
 /node_modules
 /.pnp
