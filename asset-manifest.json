@@ -1,28 +1,28 @@
 {
   "files": {
     "main.css": "/cbb-matchup-grid/static/css/main.1d203044.chunk.css",
-    "main.js": "/cbb-matchup-grid/static/js/main.2d02f2c5.chunk.js",
-    "main.js.map": "/cbb-matchup-grid/static/js/main.2d02f2c5.chunk.js.map",
+    "main.js": "/cbb-matchup-grid/static/js/main.c6d1ba46.chunk.js",
+    "main.js.map": "/cbb-matchup-grid/static/js/main.c6d1ba46.chunk.js.map",
     "runtime-main.js": "/cbb-matchup-grid/static/js/runtime-main.4438856e.js",
     "runtime-main.js.map": "/cbb-matchup-grid/static/js/runtime-main.4438856e.js.map",
     "static/css/2.44a662ca.chunk.css": "/cbb-matchup-grid/static/css/2.44a662ca.chunk.css",
-    "static/js/2.40663175.chunk.js": "/cbb-matchup-grid/static/js/2.40663175.chunk.js",
-    "static/js/2.40663175.chunk.js.map": "/cbb-matchup-grid/static/js/2.40663175.chunk.js.map",
+    "static/js/2.aaab0356.chunk.js": "/cbb-matchup-grid/static/js/2.aaab0356.chunk.js",
+    "static/js/2.aaab0356.chunk.js.map": "/cbb-matchup-grid/static/js/2.aaab0356.chunk.js.map",
     "index.html": "/cbb-matchup-grid/index.html",
-    "precache-manifest.10586c8e10390b65962cb738dbb04952.js": "/cbb-matchup-grid/precache-manifest.10586c8e10390b65962cb738dbb04952.js",
+    "precache-manifest.5e5d00ff3ae0fe7ec0ecec97a528f6df.js": "/cbb-matchup-grid/precache-manifest.5e5d00ff3ae0fe7ec0ecec97a528f6df.js",
     "service-worker.js": "/cbb-matchup-grid/service-worker.js",
     "static/css/2.44a662ca.chunk.css.map": "/cbb-matchup-grid/static/css/2.44a662ca.chunk.css.map",
     "static/css/main.1d203044.chunk.css.map": "/cbb-matchup-grid/static/css/main.1d203044.chunk.css.map",
-    "static/js/2.40663175.chunk.js.LICENSE.txt": "/cbb-matchup-grid/static/js/2.40663175.chunk.js.LICENSE.txt",
+    "static/js/2.aaab0356.chunk.js.LICENSE.txt": "/cbb-matchup-grid/static/js/2.aaab0356.chunk.js.LICENSE.txt",
     "static/media/Big_Dance_CSV.csv": "/cbb-matchup-grid/static/media/Big_Dance_CSV.96921f42.csv",
-    "static/media/KP.csv": "/cbb-matchup-grid/static/media/KP.1a573eb0.csv",
+    "static/media/KP.csv": "/cbb-matchup-grid/static/media/KP.39085ad4.csv",
     "static/media/semantic.min.css": "/cbb-matchup-grid/static/media/outline-icons.ef60a4f6.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.4438856e.js",
     "static/css/2.44a662ca.chunk.css",
-    "static/js/2.40663175.chunk.js",
+    "static/js/2.aaab0356.chunk.js",
     "static/css/main.1d203044.chunk.css",
-    "static/js/main.2d02f2c5.chunk.js"
+    "static/js/main.c6d1ba46.chunk.js"
   ]
 }

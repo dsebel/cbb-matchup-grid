@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4ff167c7f2251d63ac5618276cb0f354",
+    "revision": "27577efd815262d364813214e2bab1a5",
     "url": "/cbb-matchup-grid/index.html"
   },
   {
-    "revision": "849c685be92ba703c105",
+    "revision": "4b03128407d7b8dbd599",
     "url": "/cbb-matchup-grid/static/css/2.44a662ca.chunk.css"
   },
   {
-    "revision": "b55ad36d6c49f5e69ca4",
+    "revision": "01b5f63f822738fa92ea",
     "url": "/cbb-matchup-grid/static/css/main.1d203044.chunk.css"
   },
   {
-    "revision": "849c685be92ba703c105",
-    "url": "/cbb-matchup-grid/static/js/2.40663175.chunk.js"
+    "revision": "4b03128407d7b8dbd599",
+    "url": "/cbb-matchup-grid/static/js/2.aaab0356.chunk.js"
   },
   {
     "revision": "21b27ce63718cefcd3db89d9a49b7314",
-    "url": "/cbb-matchup-grid/static/js/2.40663175.chunk.js.LICENSE.txt"
+    "url": "/cbb-matchup-grid/static/js/2.aaab0356.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b55ad36d6c49f5e69ca4",
-    "url": "/cbb-matchup-grid/static/js/main.2d02f2c5.chunk.js"
+    "revision": "01b5f63f822738fa92ea",
+    "url": "/cbb-matchup-grid/static/js/main.c6d1ba46.chunk.js"
   },
   {
     "revision": "f1878ed90266669416bd",
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cbb-matchup-grid/static/media/Big_Dance_CSV.96921f42.csv"
   },
   {
-    "revision": "1a573eb0002220567582ca94a221f13d",
-    "url": "/cbb-matchup-grid/static/media/KP.1a573eb0.csv"
+    "revision": "39085ad4681fd6d145b74046adf50c44",
+    "url": "/cbb-matchup-grid/static/media/KP.39085ad4.csv"
   },
   {
     "revision": "13db00b7a34fee4d819ab7f9838cc428",
