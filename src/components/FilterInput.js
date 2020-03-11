@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox, Grid, Header, Icon, Popup } from 'semantic-ui-react';
+import { Checkbox, Form, Grid, Header, Icon, Popup } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 function FilterInput(props) {
@@ -20,8 +20,18 @@ function FilterInput(props) {
               style={{ left: '-12px' }}
             />
           </Grid.Column>
-          <Grid.Column></Grid.Column>
-          <Grid.Column></Grid.Column>
+          <Grid.Column as={Form}>
+            <Form.Input
+              label={`Starting Year: ${props.startingYear}`}
+              min={2010}
+              max={2020}
+              name="min-year"
+              onChange={props.onStartingYearChange}
+              step={1}
+              type="range"
+              value={props.startingYear}
+            ></Form.Input>
+          </Grid.Column>
         </Grid>
       </Grid.Column>
     </Grid.Row>
@@ -33,6 +43,7 @@ FilterInput.propTypes = {
   endingYear: PropTypes.number,
   showPotentialMatchups: PropTypes.bool,
   onPotentialMatchupsCheckboxChange: PropTypes.func,
+  onStartingYearChange: PropTypes.func,
 };
 
 export default FilterInput;

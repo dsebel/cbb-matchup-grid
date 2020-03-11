@@ -38,7 +38,6 @@ class App extends Component {
 
       // Chart filter options.
       startingYear: 2010,
-      endingYear: 2019,
       showPotentialMatchups: false,
 
       // Data status variables. Used to indicate if data is ready or not.
@@ -50,6 +49,7 @@ class App extends Component {
     this.handlePotentialMatchupsUpdate = this.handlePotentialMatchupsUpdate.bind(
       this
     );
+    this.handleStartingYearUpdate = this.handleStartingYearUpdate.bind(this);
   }
 
   componentDidMount() {
@@ -137,10 +137,16 @@ class App extends Component {
     );
   }
 
+  handleStartingYearUpdate(event, data) {
+    event.preventDefault();
+    this.setState({ startingYear: parseInt(data.value, 10) }, this.filterGames);
+  }
+
   filterGames() {
     const stateSeeds = [this.state.leftSeed, this.state.rightSeed].sort();
     const filteredGames = this.state.games.filter(game => {
       return (
+        game.year >= this.state.startingYear &&
         game.seedMatchup[0] === stateSeeds[0] &&
         game.seedMatchup[1] === stateSeeds[1]
       );
@@ -177,9 +183,6 @@ class App extends Component {
         <Grid.Row>
           <Grid.Column>
             <Message warning>
-              <b>Note:</b> Currently only includes matchup data from 2010-2019.
-            </Message>
-            <Message warning>
               <b>Note:</b> Uses incomplete and mocked data for 2020.
             </Message>
           </Grid.Column>
@@ -194,13 +197,11 @@ class App extends Component {
 
         <Divider />
 
-        <Divider />
-
         <FilterInput
           startingYear={this.state.startingYear}
-          endingYear={this.state.endingYear}
           showPotentialMatchups={this.state.showPotentialMatchups}
           onPotentialMatchupsCheckboxChange={this.handlePotentialMatchupsUpdate}
+          onStartingYearChange={this.handleStartingYearUpdate}
         ></FilterInput>
 
         <Grid.Row>
