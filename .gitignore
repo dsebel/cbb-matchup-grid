@@ -6,8 +6,9 @@
 # python
 venv/
 
-# custom tmp dirs
-tmp-*/
+# custom files
+tmp-kp.html
+tmp-kp.csv
 
 # dependencies
 /node_modules
